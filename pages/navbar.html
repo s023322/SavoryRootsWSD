@@ -1,0 +1,56 @@
+<script src="/src/scroll.js"></script>
+
+<div class="fixed w-full select-none">
+    <div class="w-full font-black border-b-2 grid grid-cols-[192px_calc(100%-384px)_192px]">
+        <div id="decoration" class="h-[158px] animated overflow-x-clip hidden md:flex items-center">
+            <h1 class="animated mx-4 w-32 h-24 border-2 font-albert font-extrabold text-center p-3 text-3xl">REAL<br>FOOD</h1>
+        </div>
+        <div id="mainTextContainer" class="animated col-span-2 md:col-span-1">
+            <div id="mainText" class="relative animate duration-300 mx-auto mt-[3rem] mb-6 w-fit">
+                <h1 id="title" class="animated relative text-6xl font-gloock font-normal select-text">
+                    Savory Roots
+                </h1>
+                <h3 id="slogan" class="animated overflow-y-clip hidden sm:block w-full font-albert font-bold text-center relative -bottom-2">From farm to feast</h3>
+            </div>
+        </div>
+        <div class="flex items-center">
+            <a href="https://google.com" id="extras" class="hidden sm:inline animated overflow-y-clip absolute w-48 h-0 my-3 mx-4 right-72 bg-none text-black font-albert font-extrabold text-center py-0 text-3xl extras">RESERVE</a>
+            <a href="https://google.com" id="extras" class="hidden sm:inline animated overflow-y-clip absolute w-48 h-0 my-3 mx-4 right-36 bg-none text-black font-albert font-extrabold text-center py-0 text-3xl extras">JOIN</a>
+            <a href="https://google.com" id="order" class="animated w-48 h-24 my-3 mx-4 bg-black text-background font-albert font-extrabold text-center py-[1.75rem] text-3xl">ORDER</a>
+        </div>
+    </div>
+    <div class="block w-full border-b-2 h-8 font-albert font-bold px-2">
+        <div class="inline float-right space-x-4 lg:space-x-8 py-1 mx-4">
+            <a class="hidden sm:inline relative select-text">123 Street Rd, City, State</a>
+            <a class="hidden lg:inline relative">Monday - Saturday</a>
+            <a class="hidden md:inline relative">9AM - 9PM</a>
+        </div>
+        <div class="hidden xl:inline absolute left-1/2 -translate-x-1/2 w-fit space-x-4 lg:space-x-8">
+            <a class="inline relative top-[4px]">RESERVE</a>
+            <a class="inline relative top-[4px]">JOIN</a>
+        </div>
+        <div class="inline float-left space-x-4 lg:space-x-8 py-1">
+            <svg id="highlight" class="absolute left-[61px]">
+                <polygon id="mainH" points="2,5 58,5 56,19 0,19" style="fill:#A4BD38;opacity:0.5"></polygon>
+                <polygon id="smallH" points="54,5 58,5 56,19 52,19" style="fill:#A4BD38;opacity:0.5"></polygon>
+            </svg>
+            <a href="./index.html" class="nav-button inline relative">HOME</a>
+            <a href="./menu.html" class="nav-button inline relative">MENU</a>
+            <a href="./process.html" class="nav-button inline relative">PROCESS</a>
+            <a href="./about.html" class="nav-button inline relative">ABOUT</a>
+        </div>
+    </div>
+    <div class="block lg:hidden w-full border-b-2 h-8 font-albert font-bold py-1 px-6">
+        <div class="float-left inline sm:hidden space-x-4 lg:space-x-8">
+            <a class="inline relative">RESERVE</a>
+            <a class="inline relative">JOIN</a>
+        </div>
+        <div class="float-right inline lg:hidden space-x-4 lg:space-x-8">
+            <a class="sm:hidden inline relative select-text">123 Street Rd, City, State</a>
+            <a class="hidden lg:hidden sm:inline relative">Monday-Saturday</a>
+            <a class="hidden md:hidden sm:inline relative">9AM-9PM</a>
+        </div>
+    </div>
+</div>
+    
+<script src="/src/navbar.js"></script>
