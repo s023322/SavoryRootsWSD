@@ -1,6 +1,6 @@
 <script src="../src/scroll.js"></script>
 
-<div class="fixed w-full select-none">
+<div class="fixed w-full select-none z-50 bg-background top-0 m-0">
     <div class="w-full font-black border-b-2 grid grid-cols-[192px_calc(100%-384px)_192px]">
         <div id="decoration" class="h-[158px] animated overflow-x-clip hidden md:flex items-center">
             <h1 class="animated mx-4 w-32 h-24 border-2 font-albert font-extrabold text-center p-3 text-3xl">REAL<br>FOOD</h1>
@@ -22,10 +22,10 @@
     <div class="block w-full border-b-2 h-8 font-albert font-bold px-2">
         <div class="inline float-right space-x-4 lg:space-x-8 py-1 mx-4">
             <a class="hidden sm:inline relative select-text">123 Street Rd, City, State</a>
-            <a class="hidden lg:inline relative">Monday - Saturday</a>
+            <a class="hidden xl:inline relative">Monday - Saturday</a>
             <a class="hidden md:inline relative">9AM - 9PM</a>
         </div>
-        <div class="hidden xl:inline absolute left-1/2 -translate-x-1/2 w-fit space-x-4 lg:space-x-8">
+        <div id="extrasSmall" class="overflow-hidden hidden md:inline absolute left-1/2 -translate-x-1/2 w-fit space-x-4 lg:space-x-8">
             <a class="inline relative top-[4px]">RESERVE</a>
             <a class="inline relative top-[4px]">JOIN</a>
         </div>
@@ -40,17 +40,20 @@
             <a href="./about.html" class="nav-button inline relative">ABOUT</a>
         </div>
     </div>
-    <div class="block lg:hidden w-full border-b-2 h-8 font-albert font-bold py-1 px-6">
-        <div class="float-left inline sm:hidden space-x-4 lg:space-x-8">
+    <div class="block xl:hidden w-full border-b-2 h-8 font-albert font-bold py-1 px-6">
+        <div class="float-left relative inline md:hidden space-x-4 lg:space-x-8">
             <a class="inline relative">RESERVE</a>
             <a class="inline relative">JOIN</a>
         </div>
-        <div class="float-right inline lg:hidden space-x-4 lg:space-x-8">
+        <div class="float-right inline xl:hidden space-x-4 lg:space-x-8">
             <a class="sm:hidden inline relative select-text">123 Street Rd, City, State</a>
-            <a class="hidden lg:hidden sm:inline relative">Monday-Saturday</a>
+            <a class="hidden xl:hidden sm:inline relative">Monday-Saturday</a>
             <a class="hidden md:hidden sm:inline relative">9AM-9PM</a>
         </div>
     </div>
 </div>
     
 <script src="../src/navbar.js"></script>
+<script defer>
+    checkElements();
+</script>

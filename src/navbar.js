@@ -1,4 +1,5 @@
 const page = window.location.href.toString().toLowerCase().split("#f");
+history.pushState("", document.title, window.location.pathname + window.location.search);
 const pageName = document.title;
 var highlight = document.getElementById("highlight");
 var navButtons = Array.from(document.getElementsByClassName("nav-button"));
@@ -19,8 +20,6 @@ if (page[1]) {
     });
 }
 
-history.pushState("", document.title, window.location.pathname + window.location.search);
-
 setTimeout(function () {
     highlight.classList.add("animated");
     navButtons.forEach(element => {
@@ -29,7 +28,7 @@ setTimeout(function () {
             var hW = element.getBoundingClientRect().width;
             main.setAttribute("points", `2,5 ${8 + hW},5 ${6 + hW},19 0,19`);
             small.setAttribute("points", `${4 + hW},5 ${8 + hW},5 ${6 + hW},19 ${2 + hW},19`);
-            highlight.style.left = `${element.getBoundingClientRect().left - 5}px`;
+            highlight.style.left = `${element.getBoundingClientRect().left - 6}px`;
             element.removeAttribute("href");
         }
         console.log(element.href);
