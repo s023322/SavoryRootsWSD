@@ -9,6 +9,8 @@ var small = document.getElementById("smallH");
 highlight.classList.remove("animated");
 
 if (page[1]) {
+    main.setAttribute("points", `0,0 0,0 0,0 0,0`);
+    small.setAttribute("points", `0,0 ,0,0 0,0 0,0`);
     navButtons.forEach(element => {
         if (page[1].replace("index", "home").includes(element.innerHTML.toLowerCase())) {
             var hW = element.getBoundingClientRect().width;
@@ -20,8 +22,12 @@ if (page[1]) {
     });
 }
 
+document.getElementById("body").style.removeProperty("opacity");
+
 setTimeout(function () {
     highlight.classList.add("animated");
+    main.setAttribute("points", `0,0 0,0 0,0 0,0`);
+    small.setAttribute("points", `0,0 ,0,0 0,0 0,0`);
     navButtons.forEach(element => {
         element.href = element.href + `#f${pageName.toUpperCase()}`;
         if (pageName.toLowerCase().includes(element.innerHTML.toLowerCase())) {
