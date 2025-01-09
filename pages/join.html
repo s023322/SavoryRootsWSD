@@ -12,10 +12,22 @@
     });
     </script>
 </head>
-<body style="background-color: #FFF9EE;">
+<body id="body" style="background-color: #FFF9EE; opacity: 0;">
     <div id="navbarDiv"></div>
 
     <script src="../src/load.js"></script>
+
+    <form class="h-[640px] mt-72">
+        <div class="block mx-auto w-full space-y-8 px-8 max-w-[1024px] font-albert font-bold">
+            <h1 class="font-gloock text-6xl text-center text-black mb-8">Join Us and Our Cause</h1>
+            <input class="w-full p-4 border-2 bg-background placeholder:text-highlight placeholder:font-normal text-black" type="text" placeholder="NAME" name="name" required>
+            <input class="w-full p-4 border-2 bg-background placeholder:text-highlight placeholder:font-normal text-black" type="text" placeholder="EMAIL" name="mail" required>
+            <label class="block">
+                <input type="checkbox" checked="checked" name="emailList"> SIGN UP FOR EMAIL UPDATES
+            </label>
+            <button class="w-full p-4 bg-black text-background text-3xl py-8 text-center">JOIN</button>
+        </div>
+    </form>
 
     <div id="footerDiv"></div>
 </body>

@@ -12,15 +12,24 @@
     });
     </script>
 </head>
-<body style="background-color: #FFF9EE;">
+<body id="body" style="background-color: #FFF9EE; opacity: 0;">
     <div id="navbarDiv"></div>
 
     <script src="../src/load.js"></script>
 
 <div class="clear-both">
-    <div class="bg-black top-32 w-full h-[60rem] block">
-
+    <section class="bg-black mt-32 w-full h-[48rem] block">
+        <ul id="slidesContainer" class="flex w-full h-full overflow-scroll scroll-smooth list-none m-0 p-0">
+            <li class="slide w-full h-full bg-cover bg-center" style="flex: 1 0 100%; background-image: url('../src/nathan-dumlao-rWcza92CapI-unsplash.jpg');"></li>
+            <li class="slide w-full h-full bg-cover bg-center" style="flex: 1 0 100%; background-image: url('../src/louis-hansel-CvLZ6hbIemI-unsplash.jpg');"></li>
+            <li class="slide w-full h-full bg-cover bg-center" style="flex: 1 0 100%; background-image: url('../src/ravi-sharma-dkpJQB_lagQ-unsplash.jpg');"></li>
+        </ul>
+        <button id="rightScroll" class="text-black relative -top-1/2 float-right bg-background p-4 pb-2 text-center text-4xl">⌝</button>
+        <button id="leftScroll" class="text-black relative -top-1/2 float-left bg-background p-4 pb-2 text-center text-4xl">⌜</button>
     </div>
+
+    <script src="../src/carousel.js"></script>
+
     <div class="bg-background w-full h-[80rem] block">
         <div class="h-1/5 py-16 border-t-2">
             <h1 class="font-gloock text-6xl text-center">Eat the freshest from Savory Roots</h1>

@@ -10,13 +10,225 @@
     $(function(){
         $("#included").load("included.html");
     });
+
     </script>
 </head>
-<body style="background-color: #FFF9EE;">
+<body id="body" style="background-color: #FFF9EE; opacity: 0;">
     <div id="navbarDiv"></div>
 
     <script src="../src/load.js"></script>
+    
+    <button onclick="finishOrder()" class="fixed z-20 left-8 bg-black w-16 h-16 py-[0.25rem] pointer-events-auto">
+        <h1 onclick="finishOrder()" id="orderNumber" class="font-albert absolute text-background top-2 left-3 text-lg pointer-events-none">0</h1>
+        <h1 onclick="finishOrder()" class="text-4xl w-min h-min m-auto text-highlight pointer-events-none">◛</h1>
+    </button>
+    
+    <div id="orderPlaced" class="absolute top-64 w-fit left-1/2 -translate-x-1/2 bg-black py-[0.25rem] hidden">
+        <h1 class="text-4xl p-8 m-auto text-highlight font-gloock">Order Placed!</h1>
+    </div>
 
+    <div class="mx-8 md:mx-auto grid mt-56 max-w-[1024px] text-center font-gloock text-4xl bg-cover">
+        <div class="space-y-8 mb-8 px-4">
+            <h1>Appetizers<div class="w-24 h-2 mx-auto border-b-2"></div></h1>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Scallion Pancake</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(7)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(7)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$7</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Spring Rolls</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(8)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(8)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$8</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Stuffed Eggplant</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(9)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(9)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$9</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Seaweed Salad</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(12)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(12)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$12</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Cucumber Salad</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(12)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(12)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$12</p>
+            </div>
+        </div>
+        
+        <div class="space-y-8 mb-8 px-4">
+            <h1>Dumplings<div class="w-24 h-2 mx-auto border-b-2"></div></h1>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Shiitake Wonton</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(12)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(12)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$12</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Chive Dumplings</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(10)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(10)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$10</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Sticky Rice Shumai</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(15)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(15)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$15</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Vegetable Buns</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(8)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(8)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$8</p>
+            </div>
+        </div>
+
+        <div class="space-y-8 mb-8 px-4">
+            <h1>Noodles<div class="w-24 h-2 mx-auto border-b-2"></div></h1>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4">Seasonal Mix Ho Fun</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(16)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(16)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$16</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4">Sesame Oil House Noodles</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(15)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(15)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$15</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4">Spicy Sauce House Noodles</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(15)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(15)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$15</p>
+            </div>
+        </div>
+
+        <div class="space-y-8 mb-8 px-4">
+            <h1>Greens<div class="w-24 h-2 mx-auto border-b-2"></div></h1>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Stir Fried Bok Choy</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(13)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(13)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$13</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Garlic String Beans</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(15)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(15)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$15</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Garlic Broccoli</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(13)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(13)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$13</p>
+            </div>
+        </div>
+
+        <div class="space-y-8 mb-8 px-4">
+            <h1>Soups<div class="w-24 h-2 mx-auto border-b-2"></div></h1>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Mushroom Wonton</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(12)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(12)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$12</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Seasonal Medley</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(11)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(11)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$11</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Lotus Roots</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(9)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(9)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$9</p>
+            </div>
+        </div>
+
+        <div class="space-y-8 mb-8 px-4">
+            <h1>Rice<div class="w-24 h-2 mx-auto border-b-2"></div></h1>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Mapo Tofu over Rice</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(14)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(14)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$14</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Seasonal Fried Rice</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(11)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(11)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$11</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">House Fried Rice</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(13)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(13)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$13</p>
+            </div>
+            <div class="w-full">
+                <h1 class="font-gloock block text-2xl text-left -mb-4 md:max-w-72">Garlic Eggplant over Rice</h1>
+                <p class="font-albert relative text-lg text-left top-4 left-8">Description</p>
+                <button onclick="addToOrder(14)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">+</button>
+                <button onclick="removeFromOrder(14)" class="font-albert relative text-lg text-right float-right ml-4 bottom-4 text-highlight">-</button>
+                <p class="font-albert relative text-lg text-right float-right bottom-4">$14</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var orderNumber = 0;
+        var orderPrice = 0;
+
+        function addToOrder(price) {
+            orderNumber++;
+            orderPrice += price;
+            document.getElementById("orderNumber").innerHTML = orderNumber;
+        }
+        function removeFromOrder(price) {
+            orderNumber--;
+            orderPrice -= price;
+            document.getElementById("orderNumber").innerHTML = orderNumber;
+        }
+        function finishOrder() {
+            document.getElementById("orderPlaced").classList.remove("hidden");
+            document.getElementById("orderPlaced").classList.add("block");
+            setTimeout(function () {
+                window.location.href = window.location.href;
+            }, 500)
+        }
+    </script>
     <div id="footerDiv"></div>
 </body>
 </html>
